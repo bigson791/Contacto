@@ -1,4 +1,35 @@
+<?php  
+    if(isset($_POST['submit'])) // se esta validando que exista el submit
+    {
+        $nombre = $_POST['nombre'];
+        $email= $_POST['email'];
+        $sunto=$_POST['asunto'];
+        $mensaje=$_POST['mensaje'];
 
+        $errors = array();
+
+        if(empty($nombre))// validando que existan los campos
+        {
+            $errors[] = 'el cammpo nombre es obligatorio' ;
+        }
+
+        if(empty($mail))
+        {
+            $errors[] = 'el cammpo email es obligatorio' ;
+        }
+
+        if(empty($asunto))
+        {
+            $errors[] = 'el cammpo asunto es obligatorio' ;
+        }
+        if(empty($mensaje))
+        {
+            $errors[] = 'el cammpo mensaje es obligatorio' ;
+        }
+
+    } 
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,29 +50,29 @@
             <div class="row">
                 <div class="col-lg-6 col-md-12">
 
-                <form class="form" method="POST" action="" autocomplete="off">
+                <form class="form" method="POST" action="<?php echo htmlentities($_SERVER['PHP_SELF']); //Envia los datos a la misma pagina ?>" autocomplete="off">
 
                     <div class="mb-3">
                         <label for="nombre" class="form-label">Nombre:</label>
-                        <input type="text" class="form-control" id="nombre" name="nombre" autofocus>
+                        <input type="text" class="form-control" id="nombre" name="nombre" required autofocus>
 
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email:</label>
-                        <input type="mail" class="form-control" id="email" name="email" autofocus require>
+                        <input type="mail" class="form-control" id="email" name="email" required>
 
                     </div>
                     <div class="mb-3">
-                        <label for="nombre" class="form-label">Nombre:</label>
-                        <input type="text" class="form-control" id="nombre" name="nombre" autofocus>
+                        <label for="asunto" class="form-label">Asunto:</label>
+                        <input type="text" class="form-control" id="asunto" name="asunto" required>
 
                     </div>
                     <div class="mb-3">
-                        <label for="nombre" class="form-label">Nombre:</label>
-                        <input type="text" class="form-control" id="nombre" name="nombre" autofocus>
+                        <label for="nombre" class="form-label">Mensaje:</label>
+                        <textarea type="text" class="form-control" id="mensaje" name="mensaje" required></textarea> 
 
                     </div>
-
+                    <button type="submit" name="submit" class="btn btn-primary btn-lg" >Enviar</button>
                 </form>
 
                 </div>
