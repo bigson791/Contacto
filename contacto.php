@@ -15,7 +15,39 @@
             <header class="mb-4 border-bottom">
                 <h1 class="fs-4">Contacto</h1>
             </header>
+      
+            <div class="row">
+                <div class="col-lg-6 col-md-12">
 
+                <form class="form" method="POST" action="" autocomplete="off">
+
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre:</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" autofocus>
+
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email:</label>
+                        <input type="mail" class="form-control" id="email" name="email" autofocus require>
+
+                    </div>
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre:</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" autofocus>
+
+                    </div>
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre:</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" autofocus>
+
+                    </div>
+
+                </form>
+
+                </div>
+
+
+            </div>
         </div>
     </main>
 </body>
