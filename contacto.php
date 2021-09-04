@@ -13,9 +13,9 @@
             $errors[] = 'el cammpo nombre es obligatorio' ;
         }
 
-        if(empty($mail))
+        if(!filter_var($email, FILTER_VALIDATE_EMAIL))
         {
-            $errors[] = 'el cammpo email es obligatorio' ;
+            $errors[] = 'La direccion de correo electronico no es valido' ;
         }
 
         if(empty($asunto))
@@ -26,6 +26,38 @@
         {
             $errors[] = 'el cammpo mensaje es obligatorio' ;
         }
+
+        if(count($errors)==0) //valida que no haya ningun error
+        {
+            if(count($errors)>0){
+
+        ?>
+
+        <!-- mostrando el error en pantalla-->
+            <div class="row">
+                <div class="col-lg-6 col-md-12">
+                    <div class="alert alert-danger alert-dismissible" role="alert">
+                        <?php
+                            foreach($errors as $error)
+                            {
+                                echo $error,'<br>'
+                            }
+                        
+                        ?>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+        <?php
+            }
+        }
+
+
 
     } 
 
